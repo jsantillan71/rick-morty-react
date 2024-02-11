@@ -7,7 +7,6 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  gql,
 } from "@apollo/client";
 
 const rickMortyClient = new ApolloClient({

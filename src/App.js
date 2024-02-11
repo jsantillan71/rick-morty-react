@@ -7,7 +7,7 @@ import { gql, useQuery } from '@apollo/client'
 function App() {
   const [characters,setCharacters] = useState(null);
   const LAUNCHES_INFO = getCharactersQuery();
-  const { data: charactersData, loading, error } = useQuery(LAUNCHES_INFO);
+  const { data: charactersData } = useQuery(LAUNCHES_INFO);
   
   const reqApi =  ()=>{
     if (charactersData) {
