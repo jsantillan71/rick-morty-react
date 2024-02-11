@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 export default function Character(props){
     const {character} = props;
-    return <div className="character-container" key={id}>
+    return <div className="character-container" key={character.id}>
             <div>
                 <img src={character.image} alt={character.name}></img>
             </div>

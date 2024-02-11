@@ -11,7 +11,7 @@ export default function Characters(props){
         <button onClick={resetCharacters} className="back-home">Volver a Home</button>
         <div className="container-characters">
             {characters.map((character)=>(
-                <Character character={character} key={id}></Character> 
+                <Character character={character} key={character.id}></Character> 
                 ))}
         </div>
         <button onClick={resetCharacters} className="back-home">Volver a Home</button>
