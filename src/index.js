@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql,
+} from "@apollo/client";
+
+const rickMortyClient = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql",
+  // La uri será el único lugar al cual harás consultas, ahí estará almacenada toda nuestra data
+  cache: new InMemoryCache(),
+  // InMemoryCache guarda la información ya consultada para evitar el pedir la misma dos o más veces
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={rickMortyClient}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>
 );
 

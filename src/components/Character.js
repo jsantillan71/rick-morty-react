@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export default function Character(props){
     const {character, index} = props;
     return <div className="character-container" key={index}>
@@ -20,3 +21,19 @@ export default function Character(props){
             </div>
             </div>       
 }
+
+Character.propTypes = {
+    character: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      species: PropTypes.string.isRequired,
+      episode: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired
+        })
+      ).isRequired
+    }).isRequired,
+    index: PropTypes.number.isRequired
+  };
