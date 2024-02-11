@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 export default function Character(props){
-    const {character, index} = props;
-    return <div className="character-container" key={index}>
+    const {character} = props;
+    return <div className="character-container" key={id}>
             <div>
                 <img src={character.image} alt={character.name}></img>
             </div>
@@ -24,6 +24,7 @@ export default function Character(props){
 
 Character.propTypes = {
     character: PropTypes.shape({
+      id:PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
@@ -34,6 +35,5 @@ Character.propTypes = {
           name: PropTypes.string.isRequired
         })
       ).isRequired
-    }).isRequired,
-    index: PropTypes.number.isRequired
+    }).isRequired
   };

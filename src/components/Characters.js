@@ -10,8 +10,8 @@ export default function Characters(props){
         <h1>Personajes</h1>
         <button onClick={resetCharacters} className="back-home">Volver a Home</button>
         <div className="container-characters">
-            {characters.map((character,index)=>(
-                <Character character={character} index={index} key={index}></Character> 
+            {characters.map((character)=>(
+                <Character character={character} key={id}></Character> 
                 ))}
         </div>
         <button onClick={resetCharacters} className="back-home">Volver a Home</button>
@@ -20,6 +20,7 @@ export default function Characters(props){
 
 Characters.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.shape({
+      id:PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,

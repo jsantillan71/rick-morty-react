@@ -42,6 +42,7 @@ function getCharactersQuery(){
                 count
               }
               results {
+                id
                 name
                 status
                 image
